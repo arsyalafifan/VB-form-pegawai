@@ -46,6 +46,12 @@ Partial Class Form1
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnCari = New System.Windows.Forms.Button()
+        Me.TxtEmail = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TxtNoTelp = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.CmbAgama = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -107,7 +113,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(28, 362)
+        Me.Label7.Location = New System.Drawing.Point(28, 351)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(37, 13)
         Me.Label7.TabIndex = 6
@@ -162,7 +168,7 @@ Partial Class Form1
         '
         Me.GroupBox1.Controls.Add(Me.RBKawin)
         Me.GroupBox1.Controls.Add(Me.RBSingle)
-        Me.GroupBox1.Location = New System.Drawing.Point(198, 362)
+        Me.GroupBox1.Location = New System.Drawing.Point(198, 351)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(200, 38)
         Me.GroupBox1.TabIndex = 14
@@ -269,11 +275,66 @@ Partial Class Form1
         Me.BtnCari.Text = "Cari"
         Me.BtnCari.UseVisualStyleBackColor = True
         '
+        'TxtEmail
+        '
+        Me.TxtEmail.Location = New System.Drawing.Point(198, 414)
+        Me.TxtEmail.Name = "TxtEmail"
+        Me.TxtEmail.Size = New System.Drawing.Size(200, 20)
+        Me.TxtEmail.TabIndex = 17
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(28, 417)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(32, 13)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Email"
+        '
+        'TxtNoTelp
+        '
+        Me.TxtNoTelp.Location = New System.Drawing.Point(198, 460)
+        Me.TxtNoTelp.Name = "TxtNoTelp"
+        Me.TxtNoTelp.Size = New System.Drawing.Size(200, 20)
+        Me.TxtNoTelp.TabIndex = 19
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(28, 463)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(48, 13)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "No. Telp"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(28, 499)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(40, 13)
+        Me.Label10.TabIndex = 20
+        Me.Label10.Text = "Agama"
+        '
+        'CmbAgama
+        '
+        Me.CmbAgama.FormattingEnabled = True
+        Me.CmbAgama.Location = New System.Drawing.Point(198, 496)
+        Me.CmbAgama.Name = "CmbAgama"
+        Me.CmbAgama.Size = New System.Drawing.Size(200, 21)
+        Me.CmbAgama.TabIndex = 21
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 519)
+        Me.Controls.Add(Me.CmbAgama)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.TxtNoTelp)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.TxtEmail)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.BtnCari)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -324,4 +385,10 @@ Partial Class Form1
     Friend WithEvents BtnSave As Button
     Friend WithEvents BtnCari As Button
     Friend WithEvents BtnReport As Button
+    Friend WithEvents TxtEmail As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TxtNoTelp As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents CmbAgama As ComboBox
 End Class

@@ -9,6 +9,9 @@ Public Class Form1
         TxtAlamat.Text = ""
         CmbBgn.Text = ""
         CmbPend.Text = ""
+        TxtEmail.Text = ""
+        TxtNoTelp.Text = ""
+        CmbAgama.Text = ""
     End Sub
 
 
@@ -25,6 +28,14 @@ Public Class Form1
         CmbPend.Items.Add("S1")
         CmbPend.Items.Add("S2")
         CmbPend.Items.Add("S3")
+
+        CmbAgama.Items.Add("Islam")
+        CmbAgama.Items.Add("Kristen")
+        CmbAgama.Items.Add("Katholik")
+        CmbAgama.Items.Add("Hindu")
+        CmbAgama.Items.Add("Buddha")
+        CmbAgama.Items.Add("Konghucu")
+        CmbAgama.Items.Add("Atheis")
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -43,7 +54,7 @@ Public Class Form1
         CNN = New OleDbConnection(Koneksi)
         If CNN.State <> ConnectionState.Closed Then CNN.Close()
         CNN.Open()
-        olecmd = New OleDbCommand("Insert into pegawai (nip, nama, bagian, tgl_lahir, alamat, pendidikan, status) values ('" & TxtNIP.Text & "','" & TxtNama.Text & "','" & CmbBgn.Text & "','" & DTtgl.Value & "','" & TxtAlamat.Text & "','" & CmbPend.Text & "','" & kawin & "')", CNN)
+        olecmd = New OleDbCommand("Insert into pegawai (nip, nama, bagian, tgl_lahir, alamat, pendidikan, status, email, no_telp, agama) values ('" & TxtNIP.Text & "','" & TxtNama.Text & "','" & CmbBgn.Text & "','" & DTtgl.Value & "','" & TxtAlamat.Text & "','" & CmbPend.Text & "','" & kawin & "','" & TxtEmail.Text & "','" & TxtNoTelp.Text & "','" & CmbAgama.Text & "')", CNN)
 
         x = olecmd.ExecuteNonQuery
 
@@ -98,7 +109,7 @@ Public Class Form1
         CNN = New OleDbConnection(Koneksi)
         If CNN.State <> ConnectionState.Closed Then CNN.Close()
         CNN.Open()
-        olecmd = New OleDbCommand("Update pegawai Set nama='" & TxtNama.Text & "', bagian='" & CmbBgn.Text & "', tgl_lahir='" & DTtgl.Value & "', alamat='" & TxtAlamat.Text & "', pendidikan='" & CmbPend.Text & "', status='" & kawin & "' where NIP='" & TxtNIP.Text & "'", CNN)
+        olecmd = New OleDbCommand("Update pegawai Set nama='" & TxtNama.Text & "', bagian='" & CmbBgn.Text & "', tgl_lahir='" & DTtgl.Value & "', alamat='" & TxtAlamat.Text & "', pendidikan='" & CmbPend.Text & "', status='" & kawin & "', email='" & TxtEmail.Text & "', no_telp='" & TxtNoTelp.Text & "', agama='" & CmbAgama.Text & "' where NIP='" & TxtNIP.Text & "'", CNN)
 
         x = olecmd.ExecuteNonQuery
 
@@ -112,8 +123,8 @@ Public Class Form1
     End Sub
 
     Private Sub BtnCari_Click(sender As Object, e As EventArgs) Handles BtnCari.Click
-        Dim poppegawai As New poppeg
-        poppegawai.ShowDialog()
+        Dim Poppegawai As New poppeg
+        Poppegawai.ShowDialog()
         If poppegawai.colNama <> "" Then
             TxtNIP.Text = poppegawai.colNIP
             TxtNama.Text = poppegawai.colNama

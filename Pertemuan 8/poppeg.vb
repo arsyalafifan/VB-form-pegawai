@@ -2,7 +2,7 @@
 Imports System.Data.OleDb
 
 Public Class poppeg
-    Public colNIP, colNama, colBgn, colTglLhr, colAlamat, colPend, colStatus As String
+    Public colNIP, colNama, colBgn, colTglLhr, colAlamat, colPend, colStatus, colEmail, colNoTelp, colAgama As String
 
 
     Dim cnn As OleDbConnection
@@ -29,6 +29,9 @@ Public Class poppeg
             colAlamat = ListView1.SelectedItems(0).SubItems(4).Text.ToString
             colPend = ListView1.SelectedItems(0).SubItems(5).Text.ToString
             colStatus = ListView1.SelectedItems(0).SubItems(6).Text.ToString
+            colEmail = ListView1.SelectedItems(0).SubItems(7).Text.ToString
+            colNoTelp = ListView1.SelectedItems(0).SubItems(8).Text.ToString
+            colAgama = ListView1.SelectedItems(0).SubItems(9).Text.ToString
             Me.Close()
         Catch ex As Exception
             MsgBox("Pilih Salah Satu Data", MsgBoxStyle.Information)
@@ -41,7 +44,7 @@ Public Class poppeg
         Dim sqlx As String
         Dim x As Integer
 
-        sqlx = "select nip, nama, bagian, tgl_lahir, alamat, pendidikan, status from pegawai where nama like '%" & Trim(TxtNama.Text) & "%'order by nama asc"
+        sqlx = "select nip, nama, bagian, tgl_lahir, alamat, pendidikan, status, email, no_telp, agama from pegawai where nama like '%" & Trim(TxtNama.Text) & "%'order by nama asc"
         cnn = New OleDbConnection(Koneksi)
         If cnn.State <> ConnectionState.Closed Then cnn.Close()
         cnn.Open()
@@ -62,6 +65,9 @@ Public Class poppeg
                     .Items(ListView1.Items.Count - 1).SubItems.Add("")
                     .Items(ListView1.Items.Count - 1).SubItems.Add("")
                     .Items(ListView1.Items.Count - 1).SubItems.Add("")
+                    .Items(ListView1.Items.Count - 1).SubItems.Add("")
+                    .Items(ListView1.Items.Count - 1).SubItems.Add("")
+                    .Items(ListView1.Items.Count - 1).SubItems.Add("")
                     .Items(x).SubItems(0).Text = dReader.GetString(0)
                     .Items(x).SubItems(1).Text = dReader.GetString(1)
                     .Items(x).SubItems(2).Text = dReader.GetString(2)
@@ -69,6 +75,9 @@ Public Class poppeg
                     .Items(x).SubItems(4).Text = dReader.GetString(4)
                     .Items(x).SubItems(5).Text = dReader.GetString(5)
                     .Items(x).SubItems(6).Text = dReader.GetString(6)
+                    .Items(x).SubItems(7).Text = dReader.GetString(7)
+                    .Items(x).SubItems(8).Text = dReader.GetString(8)
+                    .Items(x).SubItems(9).Text = dReader.GetString(9)
                 End With
 
             End While
