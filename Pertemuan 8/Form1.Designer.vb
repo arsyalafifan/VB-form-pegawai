@@ -39,13 +39,13 @@ Partial Class Form1
         Me.RBKawin = New System.Windows.Forms.RadioButton()
         Me.RBSingle = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnReport = New System.Windows.Forms.Button()
         Me.BtnExit = New System.Windows.Forms.Button()
         Me.BtnCancel = New System.Windows.Forms.Button()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.BtnCari = New System.Windows.Forms.Button()
-        Me.BtnReport = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -205,6 +205,15 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Action"
         '
+        'BtnReport
+        '
+        Me.BtnReport.Location = New System.Drawing.Point(22, 231)
+        Me.BtnReport.Name = "BtnReport"
+        Me.BtnReport.Size = New System.Drawing.Size(146, 32)
+        Me.BtnReport.TabIndex = 5
+        Me.BtnReport.Text = "Report"
+        Me.BtnReport.UseVisualStyleBackColor = True
+        '
         'BtnExit
         '
         Me.BtnExit.Location = New System.Drawing.Point(22, 313)
@@ -259,15 +268,6 @@ Partial Class Form1
         Me.BtnCari.TabIndex = 5
         Me.BtnCari.Text = "Cari"
         Me.BtnCari.UseVisualStyleBackColor = True
-        '
-        'BtnReport
-        '
-        Me.BtnReport.Location = New System.Drawing.Point(22, 231)
-        Me.BtnReport.Name = "BtnReport"
-        Me.BtnReport.Size = New System.Drawing.Size(146, 32)
-        Me.BtnReport.TabIndex = 5
-        Me.BtnReport.Text = "Report"
-        Me.BtnReport.UseVisualStyleBackColor = True
         '
         'Form1
         '

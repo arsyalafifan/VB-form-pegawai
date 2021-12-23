@@ -139,4 +139,23 @@ Public Class Form1
         Report_Pegawai.Show()
 
     End Sub
+
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        If MsgBox("Ingin menghapus data?", MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
+            CNN = New OleDbConnection(Koneksi)
+            If CNN.State <> ConnectionState.Closed Then CNN.Close()
+            CNN.Open()
+            olecmd = New OleDbCommand("delete from pegawai where nip='" & TxtNIP.Text & "'", CNN)
+            x = olecmd.ExecuteNonQuery
+
+            If x = 1 Then
+                Call Bersih()
+                BtnSave.Enabled = True
+                BtnEdit.Enabled = False
+                BtnDelete.Enabled = False
+            Else
+                MsgBox("Menghapus Data Gagal", MsgBoxStyle.Exclamation, "Kesalahan")
+            End If
+        End If
+    End Sub
 End Class
